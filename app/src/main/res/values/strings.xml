@@ -4,4 +4,8 @@
     <string name="stop_tracking">Stop Tracking</string>
     <string name="show_distance">Show distance</string>
     <string name="show_location">Show location</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="location_in_background">Location permission</string>
+    <string name="allow_location_in_background">"Allow location tracking in background?"</string>
 </resources>

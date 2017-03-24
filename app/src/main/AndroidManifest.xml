@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.upwork.smedic.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,6 +26,8 @@
         <activity
             android:name=".LocationActivity"
             android:screenOrientation="portrait" />
+
+        <service android:name=".GpsService" />
     </application>
 
 </manifest>
