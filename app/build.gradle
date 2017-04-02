@@ -3,6 +3,17 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+
+    productFlavors {
+        km {
+            applicationId "com.distance_tracker.km"
+        }
+
+        miles {
+            applicationId "com.distance_tracker.miles"
+        }
+    }
+
     defaultConfig {
         applicationId "com.upwork.smedic.myapplication"
         minSdkVersion 15
@@ -13,8 +24,22 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    if(variant.productFlavors[0].name.equals("km")){
+                        output.outputFile = new File(output.outputFile.parent,
+                                output.outputFile.name.replace("app-km-release",  "com.distance_tracker.km"));
+
+                    }else{
+                        output.outputFile = new File(output.outputFile.parent,
+                                output.outputFile.name.replace("app-miles-release",  "com.distance_tracker.miles"));
+                    }
+
+                }
+            }
         }
     }
 }
@@ -26,7 +51,7 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.1'
     testCompile 'junit:junit:4.12'
-
+    compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 }

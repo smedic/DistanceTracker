@@ -8,4 +8,8 @@
     <string name="no">NO</string>
     <string name="location_in_background">Location permission</string>
     <string name="allow_location_in_background">"Allow location tracking in background?"</string>
+    <string name="initialDistance">0.0</string>
+    <string name="gps_disabled">"GPS is disabled in your device. Would you like to enable it?"</string>
+    <string name="km">km</string>
+    <string name="miles">miles</string>
 </resources>
